@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-md-12">
+        {{yield}}
+    </div>
+    <div id="card-column" class="col-md-6">
+        <div class="card-wrapper">
+        </div>
+    </div>
+    <div class="col-md-6 marg-t">
+        <div id="cardForm">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Name on Card:</label>
+                    {{input name="name" type="text" value=cardName placeholder="Name on card" class="form-control" required="" disabled=loading}}
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Card Number:</label>
+                    {{input name="number" type="text" value=cardNumber placeholder="Card Number" class="form-control"  required="" disabled=loading}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Exp. Date:</label>
+                    {{input name="expiry" type="text" value=expirationDate placeholder="MM / YY" class="form-control"  required="" disabled=loading maxlength=7}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>CVC:</label>
+                    {{input name="cvc" type="text" value=cvc placeholder="CVC" class="form-control"  required="" disabled=loading}}
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Billing Address:</label>
+                    {{input name="address1" type="text" value=address1 placeholder="Address 1" class="form-control"  required="" disabled=loading}}
+                </div>
+                <div class="form-group">
+                    {{input name="address2" type="text" value=address2 placeholder="Address 2" class="form-control" disabled=loading}}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>City:</label>
+                    {{input name="city" type="text" value=city placeholder="City" class="form-control"  required="" disabled=loading}}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>State:</label>
+                    {{input type="text" value=cardState class="form-control"}}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Zip:</label>
+                    {{input id="zip" name="zip" maxlength="5" type="text" value=zip placeholder="Zip" class="form-control"  required="" disabled=loading}}
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary" {{action "pay"}}>Pay Now</button>
+            </div>
+        </div>
+    </div>
+</div>

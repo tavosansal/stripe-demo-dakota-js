@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Stripe Demo</title>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!-- Stripe Checkout -->
+	<script src="https://checkout.stripe.com/checkout.js"></script>
+	<!-- JS -->
+	<script src="app.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Store of Awesomeness</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+						<li><a href="#">Link</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+
+		<div class="row">
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="img/mario.png" alt="..." style="max-width:250px;">
+					<div class="caption">
+						<h3>Mario $20.00</h3>
+						<p>Mario™ never hesitates to leap into action when there’s trouble in the Mushroom Kingdom. Known for saving the world (and Princess Peach™) countless times from Bowser™, Mario is a true super star. He's got amazing jumping skills and makes use of a wide range of transformations. Mario has also powered up into countless roles: referee, doctor, sportsman, dancer, kart racer, and many more.</p>
+						<p><a href="#" class="btn btn-primary" role="button" id="mario-buy">Buy Now</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="img/link.png" alt="..." style="max-width:250px;">
+					<div class="caption">
+						<h3>Link $30.00</h3>
+						<p>Link™ is the main character in The Legend of Zelda™ games. A young boy living in Hyrule, Link is often given the task of rescuing Princess Zelda™ and Hyrule from the Gerudo thief Ganondorf. Humble to the end, Link is known not merely as a hero but as a symbol of courage, strength and wisdom as well.</p>
+						<p>
+							<form action="/charge" method="POST">
+								<script
+    								src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    								data-key="pk_test_hts0sF6EIs7hRjCAcMxdDiRG"
+    								data-image="/square-image.png"
+    								data-name="Link Amiibo"
+    								data-label="Buy Now"
+    								data-description="Link Amiibo Figurine by Nintendo"
+    								data-amount="3000">
+                                </script>
+                            </form>
+					   </p>
+                    </div>
+				</div>
+			</div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="img/dk.png" alt="..." style="max-width:250px;">
+                    <div class="caption">
+                        <h3>Donkey Kong $40.00</h3>
+                        <p>This king of the jungle is superstrong, a little scatterbrained, and absolutely nuts about bananas. His adventures usually start with people stealing his hoard of them. As his physique suggests, this Kong is a powerhouse, but he's got speed to match too! His famous red necktie is adorned with his initials, DK.</p>
+                        <p><a href="#" class="btn btn-primary" role="button">Buy Now</a></p>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="sample-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Thank You!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You bought Mario!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</body>
+</html>

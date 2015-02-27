@@ -1,0 +1,14 @@
+{
+  "name": "stripe-demo",
+  "version": "0.0.0",
+  "description": "",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gustavo San Jose",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.11.2"
+  }
+}
